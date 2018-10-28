@@ -1,0 +1,80 @@
+<div class="jumbotron">
+  <h1> Login in to start your session <i class="fa fa-user"> </i></h1>
+</div>
+<div class="img">
+  <div class="icon"><i class="ion-ios-eye-outline"></i></div>
+</div>
+<div class="cat" >
+  <a routerLink="/sign-user" routerLinkActive="active">
+    <h6>
+     Not Account Sign In <i class="fa fa-sign-in"></i>
+    </h6>
+  </a>
+</div>
+<style>
+  div.jumbotron{
+    text-align: center;
+    background: #516990;
+    color: white;
+  }
+  div.cat{
+    text-align: right;
+    color: Red;
+  }
+</style>
+
+<div class="login-box">
+  <div class="login-logo">
+    <a href="../../index2.html"><b>Alma</b>Everything is here..</a>
+  </div>
+  <!-- /.login-logo -->
+  <div class="card">
+    <div class="card-body login-card-body">
+      <form #frmLogin="ngForm" action="" method="post"
+            (ngSubmit)="login()">
+
+        <div class="form-group has-feedback">
+          <input [(ngModel)]="user.useremail" [ngModelOptions]="{standalone: true}" name="txtuserMail"
+                 type="text"  class="form-control" placeholder="@mail">
+          <span class="fa fa-user form-control-feedback"></span>
+        </div>
+
+        <div class="form-group has-feedback">
+          <input [(ngModel)]="user.userpassword" [ngModelOptions]="{standalone: true}" name="txtPassword"
+                 type="password"  class="form-control" placeholder="Password">
+          <span class="fa fa-lock form-control-feedback"></span>
+        </div>
+
+        <div class="row">
+          <!-- /.col -->
+          <!--<div class="col-4">-->
+            <!--<button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>-->
+            <!--<a routerLink="theame-home" routerLinkActive="active"></a>-->
+          <!--</div>-->
+          <div class="container ">
+            <button class="btn btn-success" (click)="login()">Login</button>
+            <a routerLink="/theame-home.component"></a>
+          </div>
+
+          <style>
+            div.col-4{
+              width: 150px;
+              text-align: center;
+              margin:0 auto;
+            }
+          </style>
+          <!-- /.col -->
+        </div>
+      </form>
+      <div *ngIf="failed" class="alert alert-danger alert-dismissible" style="margin-top:10px;">
+        <h6><i class="icon fa fa-ban"></i> Invalid Login Credentials !</h6>
+        Please enter valid login credentials to login
+      </div>
+    </div>
+    <!-- /.login-card-body -->
+  </div>
+
+</div>
+<!-- /.login-box -->
+
+

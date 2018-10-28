@@ -1,0 +1,81 @@
+<div class="bs-docs-section clearfix">
+  <div class="row">
+    <div class="col-lg-12">
+
+      <div class="page-header">
+        <h1 id="navbars">All Users...</h1>
+      </div>
+      <br>
+      <div class="bs-component">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+          <a class="navbar-brand" href="#">Admin Setting</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a routerLink="/theame-home" routerLinkActive="active" class="nav-link" href="#">Home <span class="sr-only"></span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Users</a>
+              </li>
+              <li class="nav-item">
+                <a routerLink="/view-items"  routerLinkActive="active" class="nav-link" href="#">Items</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Categories</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">check feed-backs</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"></a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+
+<!-- /bootswatch table -->
+<div class="bs-docs-section">
+
+  <div class="row">
+    <div class="col-lg-12">
+      <br>
+
+      <div class="bs-component">
+        <table class="table table-hover">
+          <thead>
+          <tr>
+            <th scope="col">Type</th>
+            <th scope="col">ID</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Birth Day</th>
+            <th scope="col">E-Mail</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let user of users" (click)="selectUsers(user)"[class.selected]="user==selectedUser" >
+            <th scope="row">Active</th>
+            <td>{{user.userID}}</td>
+            <td>{{user.userfname}}</td>
+            <td>{{user.userlname}}</td>
+            <td>{{user.userbday}}</td>
+            <td>{{user.useremail}}</td>
+            <td>
+              <i (click)="deleteUser(user)" class="fa fa-trash fa-2x"></i>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div><!-- /example -->
+    </div>
+  </div>
+</div>
+</div>

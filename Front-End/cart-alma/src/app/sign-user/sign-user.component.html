@@ -1,0 +1,170 @@
+<div class="jumbotron">
+  <h1>Sign in to start your session <i class="fa fa-user"> </i></h1>
+</div>
+
+<style>
+  div.jumbotron{
+    text-align: center;
+    background: #516990;
+    color: white;
+  }
+</style>
+
+<div class="login-box">
+  <div class="login-logo">
+    <a href="../../index2.html"><b>Alma</b>Everything is here..</a>
+  </div>
+  <!-- /.login-logo -->
+  <div class="card">
+    <div class="card-body login-card-body">
+      <form #frmSign="ngForm" (ngSubmit)="saveUser()">
+        <div class="img">
+        <input [(ngModel)]="selectedUser.userimage" [ngModelOptions]="{standalone: true}" type="file" #myFile>
+        <hr>
+        <!--<button (click)="uploadFile()">Upload you are Picture</button>-->
+        </div>
+        <style>
+          div.img{
+            text-align: center;
+            color: #0b3251;
+          }
+        </style>
+        <br>
+        <p class="form-group">
+          <label for="userName">First Name</label>
+          <input id="userName" name="txtUserFName" [(ngModel)]="selectedUser.userfname" [ngModelOptions]="{standalone: true}"
+                 type="text"  class="form-control" placeholder="First name" required>
+          <span class="fa fa-user form-control-feedback"></span>
+        </p>
+
+        <p class="form-group has-feedback">
+          <label for="userName">Last Name</label>
+          <input [(ngModel)]="selectedUser.userlname" [ngModelOptions]="{standalone: true}" name="txtUserLName"
+                 type="text"  class="form-control" placeholder="Last Name" required>
+          <span class="fa fa-user form-control-feedback"></span>
+        </p>
+
+        <p class="form-group has-feedback">
+          <label for="userName">Mail</label>
+          <input [(ngModel)]="selectedUser.useremail" [ngModelOptions]="{standalone: true}" name="txtMail" type="email"  class="form-control" placeholder="@email"
+                 pattern=".+@globex.com" size="30" required>
+          <span class="fa fa-mail-reply form-control-feedback"></span>
+        </p>
+
+        <p class="form-group has-feedback">
+          <label for="userName">Address</label>
+          <input [(ngModel)]="selectedUser.useraddress" [ngModelOptions]="{standalone: true} " name="txtAddress" type="address"  class="form-control" placeholder="address" required>
+          <span class="fa fa-address-card form-control-feedback"></span>
+        </p>
+
+        <div class="bday">
+          <p class="dateofbirth">Date Of Birth</p>
+          <input [(ngModel)]="selectedUser.userbday"  [ngModelOptions]="{standalone: true}" type="date" name="dateofbirth" id="dateofbirth" required>
+          <br>
+          <span class="fa fa-birthday-cake form-control-feedback"></span>
+        </div>
+        <!--*Birthday Picker style-->
+        <style>
+          [type="date"] {
+            background:#fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)  97% 50% no-repeat ;
+          }
+          [type="date"]::-webkit-inner-spin-button {
+            display: none;
+          }
+          [type="date"]::-webkit-calendar-picker-indicator {
+            opacity: 0;
+          }
+
+          /* custom styles */
+          body {
+            padding: 4em;
+            background: #e5e5e5;
+            font: 13px/1.4 Geneva, 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+          }
+          label {
+            display: block;
+          }
+          input {
+            border: 1px solid #c4c4c4;
+            border-radius: 5px;
+            background-color: #fff;
+            padding: 3px 5px;
+            box-shadow: inset 0 3px 6px rgba(0,0,0,0.1);
+            width: 190px;
+          }
+        </style>
+        <br>
+        <div class="form-group has-feedback">
+          <label for="userName">Password</label>
+          <input name="txtPassword" type="password"  class="form-control" placeholder="Password" required>
+          <span class="fa fa-lock form-control-feedback"></span>
+        </div>
+
+        <div class="form-group has-feedback">
+          <label for="userName">Re Enter Password</label>
+          <input [(ngModel)]="selectedUser.userpassword" [ngModelOptions]="{standalone: true}" name="txtPassword" type="password"  class="form-control" placeholder="Re Type Password" required>
+          <span class="fa fa-repeat form-control-feedback"></span>
+        </div>
+
+        <div class="clearfix">
+          <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+          <p>By creating an account you agree to our <a href="#" style="color:#005cbf">Terms & Privacy</a>.</p>
+          <button routerLink="/home"  routerLinkActive="active" type="reset" class="btn btn-danger">Cancel</button>
+          <button class="btn btn-success" >SignUp</button>
+
+          <style>
+            div.clearfix {
+              text-align: center;
+              background-color: #0b3251;
+              color: white;
+              padding: 14px 20px;
+              margin: 8px 0;
+              border: none;
+              cursor: pointer;
+              width: 100%;
+              opacity: 0.9;
+            }
+          </style>
+          <!-- /.col -->
+        </div>
+      </form>
+
+      <!--<form action="" method="post" enctype="application/x-www-form-urlencoded">-->
+        <!--<input id="name" type="text" value="name">-->
+        <!--<br>-->
+        <!--<input id="address" type="text" value="address">-->
+        <!--<br>-->
+        <!--<button id="btnGo" type="button">go</button>-->
+      <!--</form>-->
+
+      <!--<script>-->
+
+        <!--$('#btnGo').click(function () {-->
+          <!--const name = $('#name').val();-->
+          <!--const address = $('#address').val();-->
+
+          <!--const ajaxConfig = {-->
+            <!--method : 'POST',-->
+            <!--url : "http://localhost:8080/api/v1/users",-->
+            <!--date : JSON.stringify({"name" :name , "address" : address}),-->
+            <!--contentYype : 'application/json',-->
+            <!--async : true-->
+          <!--}-->
+
+          <!--$.ajax(ajaxConfig).done(function (response) {-->
+            <!--if (response){-->
+              <!--console.log("ok" +response);-->
+            <!--} else{-->
+              <!--//-->
+            <!--}-->
+          <!--});-->
+
+        <!--});-->
+
+      <!--</script>-->
+
+    </div>
+    <!-- /.login-card-body -->
+  </div>
+</div>
+<!-- /.login-box -->
