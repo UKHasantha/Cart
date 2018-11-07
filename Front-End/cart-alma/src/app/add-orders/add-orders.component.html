@@ -2,12 +2,12 @@
   <div class="row">
     <div class="col-lg-12">
       <div class="page-header">
-        <h1 id="navbars">Items..</h1>
+        <h1 id="navbars">Add Cart..</h1>
       </div>
       <br>
       <div class="bs-component">
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-          <a class="navbar-brand" href="#">Admin Setting</a>
+          <a class="navbar-brand" href="#">Your Choice</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -21,13 +21,13 @@
                 <a class="nav-link" href="#">Users</a>
               </li>
               <li class="nav-item">
-                <a routerLink="/view-items"  routerLinkActive="active" class="nav-link" href="#">Items</a>
+                <a routerLink="/view-items"  routerLinkActive="active" class="nav-link" href="#">Add Order</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Categories</a>
+                <a class="nav-link" href="#">Delete</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">check feed-backs</a>
+                <a class="nav-link" href="#">Give feed-backs</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#"></a>
@@ -35,37 +35,6 @@
             </ul>
           </div>
         </nav>
-      </div>
-    </div>
-  </div>
-  <!-- /bootswatch table -->
-  <div class="bs-docs-section">
-
-    <div class="row">
-      <div class="col-lg-12">
-        <br>
-
-        <div class="bs-component">
-          <table class="table table-hover">
-            <thead>
-            <tr>
-              <th scope="col">Type</th>
-              <th scope="col">ID</th>
-              <th scope="col">Desc</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr *ngFor="let category of categories" (click)="selectcategory(category)"[class.selected]="category==selectedcategories" >
-              <th scope="row">Active</th>
-              <td>{{category.catid}}</td>
-              <td>{{category.catdesc}}</td>
-              <td>
-                <i (click)="deletecategory(category)" class="fa fa-trash fa-2x"></i>
-              </td>
-            </tr>
-            </tbody>
-          </table>
-        </div><!-- /example -->
       </div>
     </div>
   </div>

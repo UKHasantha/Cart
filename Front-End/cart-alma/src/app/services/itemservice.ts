@@ -22,4 +22,7 @@ export class ItemService {
     return this.http.post<boolean>(MAIN_URL + URL, item);
   }
 
+  deleteItem(itemCode: number): Observable<boolean>{
+    return this.http.delete<boolean>(MAIN_URL+ URL + "/" + itemCode);
+  }
 }

@@ -11,7 +11,6 @@ import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 import { SignUserComponent } from './sign-user/sign-user.component';
 import { LoginAdminComponent } from './admin-panel/login-admin/login-admin.component';
-import { DashboardComponent } from './admin-home/dashboard/dashboard.component';
 import { ViewUsersComponent } from './admin-home/view-users/view-users.component';
 import { ViewItemsComponent } from './admin-home/view-items/view-items.component';
 import { ViewCategoriesComponent } from './admin-home/view-categories/view-categories.component';
@@ -19,6 +18,8 @@ import { ViewOrdersComponent } from './admin-home/view-orders/view-orders.compon
 import { TheameHomeComponent } from './theame-home/theame-home.component';
 import {ItemService} from "./services/itemservice";
 import {SignUserComponentCadeactivateGuard} from "./guards/sign-user-component-cadeactivate.guard";
+import {Categoryservice} from "./services/categoryservice";
+import { AddOrdersComponent } from './add-orders/add-orders.component';
 
 @NgModule({
   declarations: [
@@ -27,12 +28,12 @@ import {SignUserComponentCadeactivateGuard} from "./guards/sign-user-component-c
     LoginUserComponent,
     SignUserComponent,
     LoginAdminComponent,
-    DashboardComponent,
     ViewUsersComponent,
     ViewItemsComponent,
     ViewCategoriesComponent,
     ViewOrdersComponent,
     TheameHomeComponent,
+    AddOrdersComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,10 +57,6 @@ import {SignUserComponentCadeactivateGuard} from "./guards/sign-user-component-c
         component:LoginAdminComponent
       },
       {
-        path:'dashboard',
-        component:DashboardComponent
-      },
-      {
         path:'theame-home',
         component:TheameHomeComponent
       },
@@ -72,6 +69,14 @@ import {SignUserComponentCadeactivateGuard} from "./guards/sign-user-component-c
         component:ViewUsersComponent
       },
       {
+        path:'view-category',
+        component:ViewCategoriesComponent
+      },
+      {
+        path:'add-orders',
+        component:AddOrdersComponent
+      },
+      {
         path:'',
         pathMatch:'full',
         redirectTo:'/home'
@@ -82,7 +87,8 @@ import {SignUserComponentCadeactivateGuard} from "./guards/sign-user-component-c
     AuthService,
     AuthGuard,
     Userservice,
-    ItemService
+    ItemService,
+    Categoryservice
   ],
   bootstrap: [AppComponent]
 })

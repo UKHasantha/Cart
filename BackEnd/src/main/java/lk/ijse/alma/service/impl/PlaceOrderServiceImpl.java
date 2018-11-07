@@ -6,7 +6,6 @@ import lk.ijse.alma.repository.ItemRepository;
 import lk.ijse.alma.repository.OrderDetailRepository;
 import lk.ijse.alma.repository.OrderRepository;
 import lk.ijse.alma.service.PlaceOrderService;
-import org.omg.CORBA.INTERNAL;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;

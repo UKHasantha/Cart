@@ -5,9 +5,8 @@ import {Observable} from "rxjs/index";
 import {MAIN_URL} from "./userservice";
 import {map} from "rxjs/internal/operators";
 import {Router} from "@angular/router";
-import {Admin} from "../dtos/admin";
 
-const URL= "/api/v1/loginuser";
+const URL = "/api/v1/loginuser";
 
 @Injectable()
 export class AuthService {
@@ -18,36 +17,24 @@ export class AuthService {
 
   loginuser(user: User): Observable<boolean> {
     return this.http.post<boolean>(MAIN_URL + URL, user)
-      .pipe(
-        map((result)=>{
+      .pipe(map((result) => {
           sessionStorage.setItem("token", result + "");
-          if (result){
-            this.router.navigate(['/main']);
+          if (result) {
+            this.router.navigate(['/theame-home']);
           }
           return result;
         })
       )
   }
 
-  loginadmin(admin: Admin): Observable<boolean> {
-    return this.http.post<boolean>(MAIN_URL + URL, admin)
-      .pipe(map((result)=>{
-          sessionStorage.setItem("token", result + "");
-          if (result){
-            this.router.navigate(['/main']);
-          }
-          return result;
-        })
-      )
-  }
 
-  isAuthenticated(): boolean{
-    if (sessionStorage.getItem("token")){
-      return sessionStorage.getItem("token") == 'false' ? false: true;
+  isAuthenticated(): boolean {
+    if (sessionStorage.getItem("token")) {
+      return sessionStorage.getItem("token") == 'false' ? false : true;
     }
   }
 
-  logout(): void{
+  logout(): void {
     sessionStorage.removeItem("token");
     this.router.navigate(['/login-user']);
   }

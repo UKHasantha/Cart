@@ -7,8 +7,7 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class SignUserComponentCadeactivateGuard implements CanDeactivate<SignUserComponent> {
-  canDeactivate(component:SignUserComponent, currentRoute:ActivatedRouteSnapshot,currentStateSnapshot,
-                nextState?:RouterStateSnapshot):
+  canDeactivate(component:SignUserComponent, currentRoute:ActivatedRouteSnapshot,currentStateSnapshot,nextState?:RouterStateSnapshot):
     Observable<boolean>|Promise<boolean>|boolean{
     if (component.frmSign.dirty){
       return confirm("Are you sure you want to discard your changes?")

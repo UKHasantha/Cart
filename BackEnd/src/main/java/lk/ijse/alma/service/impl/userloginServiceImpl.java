@@ -6,6 +6,8 @@ import lk.ijse.alma.service.userloginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class userloginServiceImpl implements userloginService {
 
@@ -14,14 +16,15 @@ public class userloginServiceImpl implements userloginService {
 
     @Override
     public boolean canAuthenticate(String useremail, String userpassword) {
-
-        boolean exists = userRepository.existsById(Integer.parseInt(useremail));
-        if (!exists){
-            return false;
+        List<User> all = userRepository.findAll();
+        boolean res = false;
+        for (User user : all) {
+            if (user.getUseremail().equals(useremail)) {
+                if (user.getUserpassword().equals(userpassword)) {
+                    res = true;
+                }
+            }
         }
-
-        User user = userRepository.findById(Integer.parseInt(useremail)).get();
-        return user.getUserpassword().equals(userpassword);
-
+        return res;
     }
 }

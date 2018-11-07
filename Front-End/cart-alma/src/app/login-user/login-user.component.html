@@ -31,7 +31,7 @@
   <div class="card">
     <div class="card-body login-card-body">
       <form #frmLogin="ngForm" action="" method="post"
-            (ngSubmit)="login()">
+            (ngSubmit)="loginuser()">
 
         <div class="form-group has-feedback">
           <input [(ngModel)]="user.useremail" [ngModelOptions]="{standalone: true}" name="txtuserMail"

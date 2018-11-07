@@ -1,3 +1,4 @@
+
 <div class="jumbotron">
   <h1>Sign in to start your session <i class="fa fa-user"> </i></h1>
 </div>
@@ -16,6 +17,7 @@
   </div>
   <!-- /.login-logo -->
   <div class="card">
+
     <div class="card-body login-card-body">
       <form #frmSign="ngForm" (ngSubmit)="saveUser()">
         <div class="img">
@@ -30,6 +32,7 @@
           }
         </style>
         <br>
+
         <p class="form-group">
           <label for="userName">First Name</label>
           <input id="userName" name="txtUserFName" [(ngModel)]="selectedUser.userfname" [ngModelOptions]="{standalone: true}"

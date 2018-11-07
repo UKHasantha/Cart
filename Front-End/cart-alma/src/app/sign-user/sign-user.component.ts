@@ -68,7 +68,7 @@ export class SignUserComponent implements OnInit {
           alert("Failed to save the user");
         }
       }
-    )
+    );
   }
   clear(): void {
     let index = this.users.indexOf(this.selectedUser);

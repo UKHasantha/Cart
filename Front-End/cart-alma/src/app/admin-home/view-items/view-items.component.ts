@@ -58,4 +58,17 @@ export class ViewItemsComponent implements OnInit {
       }
     )
   }
+  deleteItem(item:Item):void{
+    if (confirm("Are you sure you want delete this item ?")){
+      this.itemservice.deleteItem(Number(item.itemcode))
+        .subscribe((result)=>{
+          if (result) {
+            alert("Item Has been Delete success...");
+          }else {
+            alert("Failed to delete Item...");
+          }
+          this.loadAllItem();
+        })
+    }
+  }
 }

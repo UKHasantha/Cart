@@ -12,7 +12,8 @@ export class LoginUserComponent implements OnInit {
   user:User = new User();
   failed:boolean;
 
-  constructor(private authservice:AuthService) { }
+  constructor(private authservice:AuthService) {
+  }
 
   ngOnInit() {
   }
@@ -24,5 +25,4 @@ export class LoginUserComponent implements OnInit {
       }
     );
   }
-
 }
